@@ -1,0 +1,4 @@
+
+.frame {
+  @apply text-[#FFFFFFE5] font-[500] max-w-fit h-[3.187rem] flex justify-center items-center px-[2rem] py-[1rem] rounded-full
+}
