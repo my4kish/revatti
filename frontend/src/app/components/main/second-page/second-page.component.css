@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap");
 
 .frame {
-  @apply rounded-full text-[#FFFFFFE5] font-[500] w-[176px] h-[56px] flex justify-center items-center
+  @apply rounded-full text-[#FFFFFFE5] font-[500] w-[176px] h-[56px] flex justify-center items-center;
 }
 
 .timeline-frame {
-  @apply rounded-full bg-[#262526] text-[#FFFFFFE5] font-[500] flex justify-center items-center py-[16px] px-[20px] w-fit
+  @apply rounded-full bg-[#262526] text-[#FFFFFFE5] font-[500] flex justify-center items-center py-[16px] px-[20px] w-fit;
 }
 
 .game-text {
-  font-family: 'Overpass Mono';
+  font-family: "Overpass Mono";
   font-weight: 500;
 }
 
 .services-frame {
-  @apply text-[#FFFFFFE5] font-[18px] bg-[#1A191A] rounded-[20px] px-[32px] py-[16px] w-[19.43rem] hover:text-[#F3FF69]
+  @apply text-[#FFFFFFE5] font-[18px] bg-[#1A191A] rounded-[20px] px-[32px] py-[16px] w-[19.43rem] hover:text-[#F3FF69];
+}
+
+.services-scrollbar {
+  --scrollbar-border-radius: 29px;
+  --scrollbar-thickness: 8;
+  --scrollbar-offset: 16;
+  --scrollbar-track-color: #FFFFFF33;
+  --scrollbar-thumb-color: #f3ff69;
+  --scrollbar-thumb-hover-color: #faff9f;
 }

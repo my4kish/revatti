@@ -1,11 +1,13 @@
-<div class="bg-[#181718] w-full rounded-t-[112px] relative">
-  <div
-    class="blur-[250px] bg-[#2362E0] w-[190px] h-[747px] absolute top-[218px] left-[25px]"
-  ></div>
-  <div
-    class="blur-[300px] bg-[#9747FF99] w-[880px] h-[250px] absolute top-[436px] left-[857px]"
-  ></div>
-  <div class="flex justify-center pt-[4.5rem] gap-[36px]">
+<div class="bg-[#181718] w-full rounded-t-[112px] relative" id="job-steps">
+  <div class="mx-auto relative max-w-[1920px]">
+    <div
+      class="blur-[250px] bg-[#2362E0] w-[190px] h-[747px] absolute top-[218px] left-[25px] z-1"
+    ></div>
+    <div
+      class="blur-[300px] bg-[#9747FF99] w-[880px] h-[250px] absolute top-[436px] left-[857px] z-1"
+    ></div>
+  </div>
+  <div class="flex justify-center pt-[4.5rem] gap-[36px] relative z-2">
     <h2 class="text-[#F3FF69] font-[500] text-[40px] leading-12">
       Чем мы<br />
       занимаемся:
@@ -53,11 +55,11 @@
     class="flex flex-col items-center pt-60 pb-[129px] gap-[24px] bg-gradient-to-b from-[#181718] via-[#000000] via-80% to-[#181718]"
   >
     <h2
-      class="text-[#F3FF69] font-[500] text-[32px] flex max-w-[1322px] w-full justify-start"
+      class="text-[#F3FF69] font-[500] text-[32px] flex max-w-[1322px] w-full justify-start relative z-2"
     >
       Как мы работаем
     </h2>
-    <div class="flex flex-wrap relative max-w-[1322px] w-full">
+    <div class="flex flex-wrap relative max-w-[1322px] w-full z-2">
       <div
         class="before:content-[''] before:absolute before:left before:top-0 before:translate-x-[-50%] before:w-[3px] before:h-full before:bg-[#8F2C2C] before:rounded-full"
       >
@@ -118,141 +120,342 @@
     <a href="" class="text-[#09EB20] game-text">&lt;a&gt; Играть &lt;/a&gt;</a>
   </div>
 </div>
-<div class="flex justify-center bg-[#110B11] mt-12">
+<div
+  class="flex justify-center bg-[#110B11] mt-12 relative mx-auto max-w-[1920px]"
+  id="services"
+>
+  <div
+    class="blur-[300px] bg-[#600A0A] w-[459px] h-[250px] absolute top-[450px] left-[265px] z-1"
+  ></div>
   <div>
     <h2
-      class="text-[#F3FF69] font-[500] text-[32px] flex max-w-[1322px] w-full justify-start"
+      class="text-[#F3FF69] font-[500] text-[32px] mb-6 flex max-w-[1322px] w-full justify-start relative"
     >
       Услуги
     </h2>
-    <div class="flex gap-6">
+    <div class="flex gap-6 relative z-2">
       <div class="flex flex-col gap-4">
-        <div class="services-frame flex gap-2 group">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="hidden group-hover:block"
-          >
-            <path
-              opacity="0.5"
-              d="M16.5 17H14.5C14.2239 17 14 16.7761 14 16.5C14 16.2239 13.7761 16 13.5 16H6.5C6.22386 16 6 16.2239 6 16.5C6 16.7761 5.77614 17 5.5 17H3.5C3.22386 17 3 17.2239 3 17.5C3 17.7761 3.22386 18 3.5 18H16.5C16.7761 18 17 17.7761 17 17.5C17 17.2239 16.7761 17 16.5 17Z"
-              fill="#F3FF69"
-            />
-            <rect
-              x="2.5"
-              y="5.5"
-              width="15"
-              height="9"
-              rx="1.5"
-              fill="#F3FF69"
-              fill-opacity="0.5"
-              stroke="#F3FF69"
-            />
-          </svg>
-          Сайты
-        </div>
+        <div class="services-frame">Сайты</div>
         <div class="services-frame">Дизайн</div>
         <div class="services-frame">Разработка</div>
         <div class="services-frame">SMM</div>
       </div>
-      <div class="bg-[#1A191A] rounded-[24px] px-10 py-6 h-[34.75rem] overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-[#F3FF69] scrollbar-track-[#FFFFFF33]">
-          <div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
-              <div class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6">
-                <p class="text-[#F3FF69] ">Корпоративный сайт</p>
-                <div class="flex justify-between items-center gap-4">
-                  <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
-                  <button class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]">Заказать</button>
-                </div>
-              </div>
+      <div
+        class="bg-[#1A191A] rounded-[24px] pl-10 py-6 h-[34.75rem] overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-[#F3FF69] scrollbar-track-[#FFFFFF33]"
+      >
+        <ng-scrollbar
+          class="services-scrollbar"
+          visibility="visible"
+          orientation="vertical"
+        >
+          <div
+            class="flex justify-between items-center w-226 border-b-[0.5px] border-b-[#FFFFFF33] pb-4 pt-6"
+          >
+            <p class="text-[#F3FF69] font-[400]">Корпоративный сайт</p>
+            <div class="flex justify-between items-center gap-4">
+              <p class="text-[#FFFFFFE5]">от 200 000 kzt</p>
+              <button
+                class="text-[#F3FF69] border-1 border-[#F3FF69] px-4 py-1 rounded-[12px]"
+              >
+                Заказать
+              </button>
+            </div>
           </div>
+        </ng-scrollbar>
       </div>
     </div>
+  </div>
+</div>
+<div class="flex justify-center mt-40 relative z-2" id="projects">
+  <div class="flex flex-col">
+    <div class="flex justify-between">
+      <h2 class="text-[#F3FF69] font-[500] text-[32px]">Проекты</h2>
+      <div
+        class="relative flex justify-between gap-6 mb-6 bg-[#FFFFFF1A] rounded-full w-[984px] h-12"
+      >
+        <span
+          class="absolute top-0 bottom-0 bg-[#F3FF69] rounded-full transition-all duration-300"
+          [ngStyle]="pillStyle"
+        ></span>
+        <button
+          #tabBtn
+          *ngFor="let tab of tabs"
+          (click)="select(tab)"
+          class="relative z-10 px-6 py-2 rounded-full transition-colors duration-300 w-58"
+          [ngClass]="
+            active === tab ? 'text-black' : 'text-white hover:bg-gray-700'
+          "
+        >
+          {{ tab }}
+        </button>
+      </div>
+    </div>
+    <div class="mt-4">
+      <ng-container *ngIf="active === 'Дизайн'">
+        <div class="flex flex-wrap gap-6 w-330">
+          <div
+            class="bg-[url(/images/project1.png)] w-106 h-106 rounded-3xl flex items-end"
+          >
+            <a href="" class="flex gap-1 ml-6 mb-8 leading-4">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 1H25V8M23.5 2.5L16 10M13 3H4C3.20435 3 2.44129 3.31607 1.87868 3.87868C1.31607 4.44129 1 5.20435 1 6V22C1 22.7956 1.31607 23.5587 1.87868 24.1213C2.44129 24.6839 3.20435 25 4 25H20C20.7956 25 21.5587 24.6839 22.1213 24.1213C22.6839 23.5587 23 22.7956 23 22V13"
+                  stroke="white"
+                  stroke-opacity="0.6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="flex flex-col">
+                <p class="text-[#FFFFFFE5] text-2xl font-[400]">
+                  Melodia Canto
+                </p>
+                <p class="text-[#FFFFFFE5] font-[300]">
+                  MVP мобильное приложение
+                </p>
+              </div>
+            </a>
+          </div>
+          <div
+            class="bg-[url(/images/project4.png)] w-106 h-106 rounded-3xl flex items-end"
+          >
+            <a href="" class="flex gap-1 ml-6 mb-8 leading-4">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 1H25V8M23.5 2.5L16 10M13 3H4C3.20435 3 2.44129 3.31607 1.87868 3.87868C1.31607 4.44129 1 5.20435 1 6V22C1 22.7956 1.31607 23.5587 1.87868 24.1213C2.44129 24.6839 3.20435 25 4 25H20C20.7956 25 21.5587 24.6839 22.1213 24.1213C22.6839 23.5587 23 22.7956 23 22V13"
+                  stroke="white"
+                  stroke-opacity="0.6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="flex flex-col">
+                <p class="text-[#FFFFFFE5] text-2xl font-[400]">
+                  Яндекс Аналитика
+                </p>
+                <p class="text-[#FFFFFFE5] font-[300]">Landing страница</p>
+              </div>
+            </a>
+          </div>
+          <div
+            class="bg-[url(/images/project3.png)] w-106 h-106 rounded-3xl flex items-end"
+          >
+            <a href="" class="flex gap-1 ml-6 mb-8 leading-4">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 1H25V8M23.5 2.5L16 10M13 3H4C3.20435 3 2.44129 3.31607 1.87868 3.87868C1.31607 4.44129 1 5.20435 1 6V22C1 22.7956 1.31607 23.5587 1.87868 24.1213C2.44129 24.6839 3.20435 25 4 25H20C20.7956 25 21.5587 24.6839 22.1213 24.1213C22.6839 23.5587 23 22.7956 23 22V13"
+                  stroke="white"
+                  stroke-opacity="0.6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="flex flex-col font-[400]">
+                <p class="text-[#FFFFFFE5] text-2xl">Корзина в дом</p>
+                <p class="text-[#FFFFFFE5] font-[300]">Web-приложение</p>
+              </div>
+            </a>
+          </div>
+          <div
+            class="bg-[url(/images/project2.png)] w-106 h-106 rounded-3xl flex items-end"
+          >
+            <a href="" class="flex gap-1 ml-6 mb-8 leading-4">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 1H25V8M23.5 2.5L16 10M13 3H4C3.20435 3 2.44129 3.31607 1.87868 3.87868C1.31607 4.44129 1 5.20435 1 6V22C1 22.7956 1.31607 23.5587 1.87868 24.1213C2.44129 24.6839 3.20435 25 4 25H20C20.7956 25 21.5587 24.6839 22.1213 24.1213C22.6839 23.5587 23 22.7956 23 22V13"
+                  stroke="white"
+                  stroke-opacity="0.6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="flex flex-col">
+                <p class="text-[#FFFFFFE5] text-2xl font-[400]">
+                  Программа лояльности
+                </p>
+                <p class="text-[#FFFFFFE5] font-[300]">CRM система</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="active === 'Разработка'">
+        Контент разработки...
+      </ng-container>
+      <ng-container *ngIf="active === 'SMM'"> Контент SMM... </ng-container>
+    </div>
+  </div>
+</div>
+<div
+  class="flex justify-center mx-auto mt-40 relative bg-[url(/images/pacman-path.svg)] w-[1422px] h-[643px]"
+>
+  <img
+    src="/images/image 18.png"
+    alt="ghost"
+    class="w-14 h-14 absolute left-[32.95rem] top-[-1.5rem]"
+  />
+  <img
+    src="/images/image 17.png"
+    alt="ghost"
+    class="w-14 h-14 absolute left-[-1.5rem] top-[30rem]"
+  />
+  <img
+    src="/images/image 16.png"
+    alt="ghost"
+    class="w-14 h-14 absolute left-[34.95rem] top-[38.2rem]"
+  />
+  <img
+    src="/images/image 15.png"
+    alt="ghost"
+    class="w-14 h-14 absolute left-[42.45rem] top-[38.2rem]"
+  />
+  <img
+    src="/images/image 19.png"
+    alt="ghost"
+    class="w-14 h-14 absolute left-[72.45rem] top-[38.2rem]"
+  />
+  <div class="flex flex-col w-330">
+    <div class="flex justify-between w-full mt-10 mb-4">
+      <h2
+        class="text-[#F3FF69] font-[500] text-[32px] flex max-w-[1322px] w-full justify-start"
+      >
+        Наша команда
+      </h2>
+      <div class="text-[#FFFFFFE5] flex items-center gap-4">
+        <button class="bg-[#262526] rounded-full py-1 w-[6rem]">< Назад</button>
+        <button class="bg-[#262526] rounded-full py-1 w-[6rem]">Далее ></button>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div
+        class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
+      >
+        <p class="absolute left-6 text-[#FFFFFF80] font-[300]">4/5</p>
+        <img
+          src="/images/Ruslan.png"
+          alt=""
+          class="w-[12.5rem] h-[15.625rem]"
+        />
+        <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
+          <p class="text-[24px] font-[500]">Руслан</p>
+          <div
+            class="bg-[#39B025] rounded-[12px] py-[0.5rem] px-[1rem] font-[400]"
+          >
+            SEO / Project Manager
+          </div>
+        </div>
+        <div
+          class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[16.56rem]"
+        >
+          <div class="border rounded-full px-2 py-1">Yandex Business</div>
+          <div class="border rounded-full px-2 py-1">Wordstat</div>
+          <div class="border rounded-full px-2 py-1">Google Trends</div>
+          <div class="border rounded-full px-2 py-1">My Business</div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
+      >
+        <p class="absolute left-6 text-[#FFFFFF80] font-[300]">4/5</p>
+        <img src="/images/Olga.png" alt="" class="w-[12.5rem] h-[15.625rem]" />
+        <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
+          <p class="text-[24px] font-[500]">Ольга</p>
+          <div
+            class="bg-[#39B025] rounded-[12px] py-[0.5rem] px-[1rem] font-[400]"
+          >
+            UX/UI - designer
+          </div>
+        </div>
+        <div
+          class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[16.56rem]"
+        >
+          <div class="border rounded-full px-2 py-1">Figma</div>
+          <div class="border rounded-full px-2 py-1">Landing Design</div>
+          <div class="border rounded-full px-2 py-1">UX/UI Design</div>
+          <div class="border rounded-full px-2 py-1">Web Design</div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
+      >
+        <p class="absolute left-6 text-[#FFFFFF80] font-[300]">4/5</p>
+        <img
+          src="/images/Abylai.png"
+          alt=""
+          class="w-[12.5rem] h-[15.625rem]"
+        />
+        <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
+          <p class="text-[24px] font-[500]">Абылай</p>
+          <div
+            class="bg-[#39B025] rounded-[12px] py-[0.5rem] px-[1rem] font-[400]"
+          >
+            Backend Developer
+          </div>
+        </div>
+        <div
+          class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[268px]"
+        >
+          <div class="border rounded-full px-2 py-1">Python</div>
+          <div class="border rounded-full px-2 py-1">FastAPI</div>
+          <div class="border rounded-full px-2 py-1">Docker</div>
+          <div class="border rounded-full px-2 py-1">SQL</div>
+          <div class="border rounded-full px-2 py-1">Dart</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex justify-center mt-[8.75rem] gap-[6rem]">
+  <h2 class="text-[#FFFFFF] font-[500] text-[4rem] leading-tight">
+    Хотите обсудить<br />
+    ваш проект?
+  </h2>
+  <div class="bg-[#262526] rounded-[2rem] p-[2.5rem]">
+    <form>
+      <div class="flex flex-col gap-[3rem]">
+        <div class="flex flex-col gap-[1rem]">
+          <p class="text-[#FFFFFFE5] font-[500] text-[1.5rem] flex">
+            Введите ваш номер<span class="text-[#FF3737] text-[1rem] font-[400]">*</span>
+          </p>
+        </div>
+        <div></div>
+      </div>
+      <div class="flex flex-col gap-[0.625rem]">
+        <button
+          class="bg-[#F3FF69] text-[#110B11] font-[500] rounded-[1.25rem] py-[0.75rem]"
+        >
+          Свяжитесь со мной
+        </button>
+        <p class="text-[#FFFFFF80]">Мы свяжемся с вами в течении 30 минут</p>
+      </div>
+    </form>
   </div>
 </div>

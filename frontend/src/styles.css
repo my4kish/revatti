@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-@plugin "tailwind-scrollbar";
-
-/* При желании добавить опции */
-@plugin "tailwind-scrollbar" {
-  nocompatible: true;
-  preferredStrategy: "pseudoelements";
-}
-
 @font-face {
   font-family: 'Stolzl';
   src: url('/fonts/Stolzl/stolzl_thin.woff2') format('woff2'),
@@ -67,3 +59,10 @@ body {
   font-weight: 350;
   background: #110B11;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
