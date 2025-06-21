@@ -342,120 +342,174 @@
     alt="ghost"
     class="w-14 h-14 absolute left-[72.45rem] top-[38.2rem]"
   />
-  <div class="flex flex-col w-330">
-    <div class="flex justify-between w-full mt-10 mb-4">
-      <h2
-        class="text-[#F3FF69] font-[500] text-[32px] flex max-w-[1322px] w-full justify-start"
-      >
-        Наша команда
-      </h2>
-      <div class="text-[#FFFFFFE5] flex items-center gap-4">
-        <button class="bg-[#262526] rounded-full py-1 w-[6rem]">< Назад</button>
-        <button class="bg-[#262526] rounded-full py-1 w-[6rem]">Далее ></button>
-      </div>
-    </div>
-    <div class="flex gap-4">
-      <div
-        class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
-      >
-        <p class="absolute left-6 text-[#FFFFFF80] font-[300]">4/5</p>
-        <img
-          src="/images/Ruslan.png"
-          alt=""
-          class="w-[12.5rem] h-[15.625rem]"
-        />
-        <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
-          <p class="text-[24px] font-[500]">Руслан</p>
-          <div
-            class="bg-[#39B025] rounded-[12px] py-[0.5rem] px-[1rem] font-[400]"
-          >
-            SEO / Project Manager
-          </div>
-        </div>
-        <div
-          class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[16.56rem]"
-        >
-          <div class="border rounded-full px-2 py-1">Yandex Business</div>
-          <div class="border rounded-full px-2 py-1">Wordstat</div>
-          <div class="border rounded-full px-2 py-1">Google Trends</div>
-          <div class="border rounded-full px-2 py-1">My Business</div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
-      >
-        <p class="absolute left-6 text-[#FFFFFF80] font-[300]">4/5</p>
-        <img src="/images/Olga.png" alt="" class="w-[12.5rem] h-[15.625rem]" />
-        <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
-          <p class="text-[24px] font-[500]">Ольга</p>
-          <div
-            class="bg-[#39B025] rounded-[12px] py-[0.5rem] px-[1rem] font-[400]"
-          >
-            UX/UI - designer
-          </div>
-        </div>
-        <div
-          class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[16.56rem]"
-        >
-          <div class="border rounded-full px-2 py-1">Figma</div>
-          <div class="border rounded-full px-2 py-1">Landing Design</div>
-          <div class="border rounded-full px-2 py-1">UX/UI Design</div>
-          <div class="border rounded-full px-2 py-1">Web Design</div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
-      >
-        <p class="absolute left-6 text-[#FFFFFF80] font-[300]">4/5</p>
-        <img
-          src="/images/Abylai.png"
-          alt=""
-          class="w-[12.5rem] h-[15.625rem]"
-        />
-        <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
-          <p class="text-[24px] font-[500]">Абылай</p>
-          <div
-            class="bg-[#39B025] rounded-[12px] py-[0.5rem] px-[1rem] font-[400]"
-          >
-            Backend Developer
-          </div>
-        </div>
-        <div
-          class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[268px]"
-        >
-          <div class="border rounded-full px-2 py-1">Python</div>
-          <div class="border rounded-full px-2 py-1">FastAPI</div>
-          <div class="border rounded-full px-2 py-1">Docker</div>
-          <div class="border rounded-full px-2 py-1">SQL</div>
-          <div class="border rounded-full px-2 py-1">Dart</div>
-        </div>
-      </div>
+  <div class="flex flex-col w-[20.625rem]">
+  <div class="flex justify-between w-full mt-10 mb-4">
+    <h2 class="text-[#F3FF69] font-medium text-2xl w-full">Наша команда</h2>
+    <div class="text-[#FFFFFFE5] flex items-center gap-4">
+      <!-- кнопки здесь не нужны, навигация через carousel -->
     </div>
   </div>
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let member of team; index as i">
+      <ng-template carouselSlide [id]="'member-'+i">
+        <div class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]">
+          <p class="absolute left-6 text-[#FFFFFF80] font-light">{{ member.label }}</p>
+          <img [src]="member.img" alt="{{member.name}}" class="w-[200px] h-[250px]" />
+          <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
+            <p class="text-2xl font-medium">{{ member.name }}</p>
+            <div class="bg-[#39B025] rounded-[12px] py-2 px-4 font-[400]">{{ member.position }}</div>
+          </div>
+          <div class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[268px]">
+            <div *ngFor="let skill of member.skills" class="border rounded-full px-2 py-1">{{ skill }}</div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
+
 </div>
 <div class="flex justify-center mt-[8.75rem] gap-[6rem]">
   <h2 class="text-[#FFFFFF] font-[500] text-[4rem] leading-tight">
     Хотите обсудить<br />
     ваш проект?
   </h2>
-  <div class="bg-[#262526] rounded-[2rem] p-[2.5rem]">
-    <form>
-      <div class="flex flex-col gap-[3rem]">
-        <div class="flex flex-col gap-[1rem]">
-          <p class="text-[#FFFFFFE5] font-[500] text-[1.5rem] flex">
-            Введите ваш номер<span class="text-[#FF3737] text-[1rem] font-[400]">*</span>
-          </p>
+  <form>
+    <div class="flex flex-col gap-[1.5rem]">
+      <div class="bg-[#262526] rounded-[2rem] p-[2.5rem]">
+        <div class="flex flex-col gap-[3rem]">
+          <div class="flex flex-col gap-[1rem]">
+            <p class="text-[#FFFFFFE5] font-[500] text-[1.5rem] flex">
+              Введите ваш номер<span
+                class="text-[#FF3737] text-[1rem] font-[400]"
+                >*</span
+              >
+            </p>
+            <div class="flex flex-wrap max-w-[28.8125rem] gap-[1rem]">
+              <div class="relative flex gap-[1rem]">
+                <select
+                  [(ngModel)]="selected"
+                  [ngModelOptions]="{ standalone: true }"
+                  class="numberSelect appearance-none bg-[#FFFFFF1A] rounded-[1rem] w-[8.125rem] h-[3rem] px-[1rem] text-[#FFFFFFE5] font-[400] text-[1rem] pr-10"
+                >
+                  @for (country of countries; track country) {
+                  <option
+                    [value]="country.dialCode"
+                    class="bg-[#181718] text-[#FFFFFFE5] hover:bg-[#262526] px-4 py-2"
+                  >
+                    {{ country.flag }} {{ country.dialCode }}
+                  </option>
+                  }
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-[6.3rem] flex items-center"
+                >
+                  <svg
+                    class="h-4 w-4 text-white opacity-70"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  placeholder="___ ___ __ __"
+                  class="appearance-none bg-[#FFFFFF1A] rounded-[1rem] w-[20.187rem] h-[3rem] px-[1rem] text-[#FFFFFFE5] font-[400] text-[1rem] placeholder:text-[#FFFFFF4D]"
+                />
+              </div>
+              <div class="flex gap-[2.625rem]">
+                @for (item of contactMethods; track $index) {
+                <label
+                  class="flex items-center gap-1 text-[#FFFFFFE5] font-[400] text-[1rem] cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="contactMethod"
+                    [value]="item.value"
+                    [(ngModel)]="selectedContactMethod"
+                    [ngModelOptions]="{ standalone: true }"
+                    class="hidden custom-radio peer"
+                  />
+                  <div class="custom-radio-outer">
+                    <div class="custom-radio-dot"></div>
+                  </div>
+                  <span class="peer-checked:text-[#f3ff69]">{{
+                    item.name
+                  }}</span>
+                </label>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[1rem]">
+            <p class="text-[#FFFFFFE5] font-[500] text-[1.5rem] flex">
+              Что вы хотите создать?
+            </p>
+            <textarea
+              id=""
+              cols="30"
+              rows="3"
+              class="bg-[#FFFFFF1A] text-[#FFFFFFE5] rounded-[1rem] p-[1rem] placeholder:text-[#FFFFFF4D] no-scrollbar"
+              placeholder="Например, “сайт для бизнеса с возможностью онлайн оплаты” или “мне нужна консультация”"
+            ></textarea>
+          </div>
         </div>
-        <div></div>
       </div>
-      <div class="flex flex-col gap-[0.625rem]">
+      <div class="flex flex-col items-center gap-[0.625rem]">
         <button
-          class="bg-[#F3FF69] text-[#110B11] font-[500] rounded-[1.25rem] py-[0.75rem]"
+          class="w-full bg-[#F3FF69] text-[#110B11] font-[500] rounded-[1.25rem] py-[0.75rem]"
         >
           Свяжитесь со мной
         </button>
         <p class="text-[#FFFFFF80]">Мы свяжемся с вами в течении 30 минут</p>
       </div>
-    </form>
+    </div>
+  </form>
+</div>
+<div class="mt-[10.82rem]">
+  <div class="relative z-1 flex flex-row">
+    <div class="blur-[50px] bg-[#DF52C9] w-[320px] h-[24px]"></div>
+    <div class="blur-[50px] bg-[#4481FC] w-[320px] h-[24px]"></div>
+    <div class="blur-[50px] bg-[#7EE56D] w-[320px] h-[24px]"></div>
+    <div class="blur-[50px] bg-[#E5C46D] w-[320px] h-[24px]"></div>
+    <div class="blur-[50px] bg-[#C190FF] w-[320px] h-[24px]"></div>
+    <div class="blur-[50px] bg-[#6CD9CC] w-[320px] h-[24px]"></div>
   </div>
+  <footer
+    class="w-full h-[11.5rem] bg-[#110B11] flex justify-start gap-[8.5rem] items-center px-75 py-10 relative z-3"
+  >
+    <img src="/images/REVATTI.png" alt="revatti-logo" class="max-h-min" />
+    <div class="text-[#FFFFFF]">
+      <ul class="flex gap-15">
+        <li>
+          <a href="tel:+77001234567" class="footer-link">
+            <img src="/images/footer-call.svg" alt="call-ico" />
+            +7 700 123 45 67
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/revatti" class="footer-link">
+            <img src="/images/footer-insta.svg" alt="" />
+            revatti
+          </a>
+        </li>
+        <li>
+          <a href="mailto:revatti@mail.com" class="footer-link">
+            <img src="/images/footer-mail.svg" alt="mail-ico" />
+            revatti&#64;mail.com
+          </a>
+        </li>
+        <li>
+          <a href="#aboutus" class="footer-link">
+            <img src="/images/footer-game-ico.svg" alt="" />
+            Выиграть скидку
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </div>

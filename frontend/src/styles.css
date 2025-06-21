@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 @font-face {
   font-family: 'Stolzl';
@@ -64,5 +66,15 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@layer utilities {
+  /* Скрытие scrollbar в WebKit (Chrome, Safari, Opera) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Скрытие scrollbar в IE, Edge и Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none;    /* Firefox */
+  }
+}

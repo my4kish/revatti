@@ -25,3 +25,37 @@
   --scrollbar-thumb-color: #f3ff69;
   --scrollbar-thumb-hover-color: #faff9f;
 }
+
+.custom-radio-outer {
+  width: 1.25rem;  /* 20px */
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 2px solid #FFFFFF99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background-color: #FFFFFF33;
+}
+
+.custom-radio-dot {
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #F3FF69;
+  transition: all 0.2s;
+}
+
+/* Когда radio выбран — меняем цвет обводки и скрываем dot */
+.custom-radio:checked + .custom-radio-outer {
+  border-color: #F3FF69;
+}
+
+.custom-radio:checked + .custom-radio-outer .custom-radio-dot {
+  display: block;
+}
+
+.footer-link {
+  @apply flex items-center gap-[0.25rem] hover:text-[#ffffffd0];
+}
