@@ -342,33 +342,49 @@
     alt="ghost"
     class="w-14 h-14 absolute left-[72.45rem] top-[38.2rem]"
   />
-  <div class="flex flex-col w-[20.625rem]">
-  <div class="flex justify-between w-full mt-10 mb-4">
-    <h2 class="text-[#F3FF69] font-medium text-2xl w-full">Наша команда</h2>
-    <div class="text-[#FFFFFFE5] flex items-center gap-4">
-      <!-- кнопки здесь не нужны, навигация через carousel -->
+  <div class="flex flex-col w-[82.5rem]">
+    <div class="flex justify-between w-full mt-10 mb-4">
+      <h2 class="text-[#F3FF69] font-medium text-2xl w-full">Наша команда</h2>
+      <div class="text-[#FFFFFFE5] flex items-center gap-4">
+        <!-- кнопки здесь не нужны, навигация через carousel -->
+      </div>
     </div>
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let member of team; index as i">
+        <ng-template carouselSlide [id]="'member-' + i" [width]="312">
+          <div
+            class="flex flex-col max-w-[19.5rem] w-full relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]"
+          >
+            <p class="absolute left-6 text-[#FFFFFF80] font-light">
+              {{ member.label }}
+            </p>
+            <img
+              [src]="member.img"
+              alt="{{ member.name }}"
+              class="!w-[200px] h-[250px]"
+            />
+            <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
+              <p class="text-2xl font-medium">{{ member.name }}</p>
+              <div class="bg-[#39B025] rounded-[12px] py-2 px-4 font-[400]">
+                {{ member.position }}
+              </div>
+            </div>
+            <div
+              class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[268px]"
+            >
+              <div
+                *ngFor="let skill of member.skills"
+                class="border rounded-full px-2 py-1"
+              >
+                {{ skill }}
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
   </div>
-
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let member of team; index as i">
-      <ng-template carouselSlide [id]="'member-'+i">
-        <div class="flex flex-col relative gap-4 items-center rounded-[24px] p-6 bg-[#262526]">
-          <p class="absolute left-6 text-[#FFFFFF80] font-light">{{ member.label }}</p>
-          <img [src]="member.img" alt="{{member.name}}" class="w-[200px] h-[250px]" />
-          <div class="flex flex-col items-center gap-4 text-[#FFFFFFE5]">
-            <p class="text-2xl font-medium">{{ member.name }}</p>
-            <div class="bg-[#39B025] rounded-[12px] py-2 px-4 font-[400]">{{ member.position }}</div>
-          </div>
-          <div class="flex flex-wrap gap-2 justify-center text-[#FFFFFFE5] max-w-[268px]">
-            <div *ngFor="let skill of member.skills" class="border rounded-full px-2 py-1">{{ skill }}</div>
-          </div>
-        </div>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
-</div>
-
 </div>
 <div class="flex justify-center mt-[8.75rem] gap-[6rem]">
   <h2 class="text-[#FFFFFF] font-[500] text-[4rem] leading-tight">
@@ -460,9 +476,7 @@
         </div>
       </div>
       <div class="flex flex-col items-center gap-[0.625rem]">
-        <button
-          class="w-full bg-[#F3FF69] text-[#110B11] font-[500] rounded-[1.25rem] py-[0.75rem]"
-        >
+        <button class="w-full bg-[#F3FF69] text-[#110B11] font-[500] rounded-[1.25rem] py-[0.75rem] cursor-pointer">
           Свяжитесь со мной
         </button>
         <p class="text-[#FFFFFF80]">Мы свяжемся с вами в течении 30 минут</p>

@@ -86,7 +86,21 @@ export class SecondPageComponent {
       position: 'Backend Developer',
       skills: ['Python','FastAPI','Docker','SQL','Dart'],
       label: '4/5'
-    }
+    },
+    {
+      name: 'Абылай',
+      img: '/images/Abylai.png',
+      position: 'Backend Developer',
+      skills: ['Python','FastAPI','Docker','SQL','Dart'],
+      label: '4/5'
+    },
+    {
+      name: 'Абылай',
+      img: '/images/Abylai.png',
+      position: 'Backend Developer',
+      skills: ['Python','FastAPI','Docker','SQL','Dart'],
+      label: '4/5'
+    },
   ];
 
   customOptions: OwlOptions = {
@@ -95,6 +109,8 @@ export class SecondPageComponent {
     touchDrag: true,
     pullDrag: true,
     dots: false,
+    margin: 16,
+    autoWidth: true,
     navSpeed: 700,
     navText: ['< Назад','Далее >'],
     nav: true,

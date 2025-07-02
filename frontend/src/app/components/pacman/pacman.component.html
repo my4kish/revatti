@@ -1,0 +1,49 @@
+<div *ngIf="!gameWon" class="board">
+  <div class="score">Съедено вишен: {{ score }}</div>
+  <div *ngFor="let row of map; let y = index" class="row">
+    <div
+      *ngFor="let cell of row; let x = index"
+      class="cell"
+      [ngClass]="{
+        'wall-h': cell === 'H',
+        'wall-v': cell === 'V',
+        'wall-ul': cell === 'UL',
+        'wall-ur': cell === 'UR',
+        'wall-dl': cell === 'DL',
+        'wall-dr': cell === 'DR',
+        'wall-hb': cell === 'HB',
+        'wall-ht': cell === 'HT',
+        'wall-vt': cell === 'VT',
+        'wall-vb': cell === 'VB',
+        'wall-veb': cell === 'VEB',
+        'wall-vet': cell === 'VET',
+        'wall-her': cell === 'HER',
+        'wall-hel': cell === 'HEL',
+      }"
+    >
+      <div
+        *ngIf="isPacman(x, y)"
+        class="pacman"
+        [ngStyle]="{ transform: getPacmanTransform() }"
+      ></div>
+
+      <div *ngIf="isFood(x, y)" class="food"></div>
+      <div
+        *ngIf="isGhost(x, y)"
+        [ngClass]="'ghost ghost-' + getGhostColor(x, y)"
+      >
+        <div class="eyes">
+          <div class="eye"><div class="pupil"></div></div>
+          <div class="eye"><div class="pupil"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="gameWon" class="overlay">
+  <div class="message-box">
+    <p>Ты съел все вишни!</p>
+    <button (click)="restart()">Начать заново</button>
+  </div>
+</div>

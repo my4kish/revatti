@@ -1,0 +1,489 @@
+.board {
+  display: inline-block;
+  background-color: black;
+  padding: 4px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 42px;
+  height: 42px;
+  background-color: black;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.score {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Общая стена */
+.wall {
+  position: absolute;
+  background-color: #007bff;
+  border-radius: 3px;
+}
+
+/* Горизонтальные стены — сверху и снизу */
+.wall-h::before,
+.wall-h::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.wall-h::before {
+  top: 10px;
+}
+.wall-h::after {
+  bottom: 10px;
+}
+
+/* Вертикальные стены — слева и справа */
+.wall-v::before,
+.wall-v::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #007bff;
+}
+
+.wall-v::before {
+  left: 10px;
+}
+.wall-v::after {
+  right: 10px;
+}
+
+/* Угловые стены */
+.wall-ul::before,
+.wall-ur::before,
+.wall-dl::before,
+.wall-dr::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 3px solid #007bff;
+  border-radius: 0 0 0 100%;
+}
+
+.wall-dl::before {
+  border-top: none;
+  border-right: none;
+  top: 0;
+  right: 0;
+}
+
+.wall-dr::before {
+  border-top: none;
+  border-left: none;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 100% 0;
+}
+
+.wall-ur::before {
+  border-bottom: none;
+  border-left: none;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 0;
+}
+
+.wall-ul::before {
+  border-bottom: none;
+  border-right: none;
+  bottom: 0;
+  right: 0;
+  border-radius: 100% 0 0 0;
+}
+
+.wall-ul::after,
+.wall-ur::after,
+.wall-dl::after,
+.wall-dr::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-radius: 0 0 0 100%;
+}
+
+.wall-dl::after {
+  border-top: none;
+  border-right: none;
+  bottom: 29px;
+  left: 29px;
+}
+
+.wall-dr::after {
+  border-top: none;
+  border-left: none;
+  bottom: 29px;
+  right: 29px;
+  border-radius: 0 0 100% 0;
+}
+
+.wall-ur::after {
+  border-bottom: none;
+  border-left: none;
+  top: 29px;
+  right: 29px;
+  border-radius: 0 100% 0 0;
+}
+
+.wall-ul::after {
+  border-bottom: none;
+  border-right: none;
+  top: 29px;
+  left: 29px;
+  border-radius: 100% 0 0 0;
+}
+
+/* Пакмэн */
+.pacman {
+  width: 34px;
+  height: 34px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  overflow: hidden;
+}
+
+.pacman::before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+  animation: mouth 0.3s infinite alternate;
+}
+
+@keyframes mouth {
+  0% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 50%);
+  }
+}
+
+
+
+/* Еда */
+.food {
+  width: 64px;
+  height: 64px;
+  background-image: url("/images/cherry.svg"); /* путь к вишне */
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ghost {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 13px 13px 0 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.ghost::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: repeating-radial-gradient(
+    circle at 4px 6px,
+    black 0 4px,
+    transparent 4px 8px
+  );
+  background-size: 8px 6px;
+  background-repeat: repeat-x;
+}
+
+/* Цвета */
+.ghost-red {
+  background-color: red;
+}
+.ghost-pink {
+  background-color: pink;
+}
+.ghost-orange {
+  background-color: orange;
+}
+.ghost-blue {
+  background-color: #3498db;
+}
+
+/* Глаза */
+.eyes {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.eye {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pupil {
+  width: 9px;
+  height: 9px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.wall-hb::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.wall-hb::after {
+  content: "";
+  position: absolute;
+  top: 29px;
+  right: 29px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-radius: 0 100% 0 0;
+  border-bottom: none;
+  border-left: none;
+}
+
+.wall-ht::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.wall-ht::after {
+  content: "";
+  position: absolute;
+  bottom: 29px;
+  right: 29px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-radius: 0 0 100% 0;
+  border-top: none;
+  border-left: none;
+}
+
+.wall-vt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px; /* первая линия */
+  width: 3px;
+  height: 100%;
+  background-color: #007bff;
+  box-shadow: 19px 0 0 #007bff; /* вторая линия через 10px вправо */
+}
+
+.wall-vt::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  left: 29px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-radius: 100% 0 0 0;
+  border-bottom: none;
+  border-right: none;
+}
+
+.wall-vb::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px; /* первая линия */
+  width: 3px;
+  height: 100%;
+  background-color: #007bff;
+  box-shadow: 19px 0 0 #007bff; /* вторая линия через 10px вправо */
+}
+
+.wall-vb::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 29px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-radius: 0 0 0 100%;
+  border-top: none;
+  border-right: none;
+  z-index: 1;
+}
+
+.wall-veb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px; /* первая линия */
+  width: 3px;
+  height: 50%;
+  background-color: #007bff;
+  box-shadow: 19px 0 0 #007bff; /* вторая линия через 10px вправо */
+}
+
+.wall-veb::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 22px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-top: none;
+  border-radius: 0 0 100% 100%;
+}
+
+.wall-vet::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px; /* первая линия */
+  width: 3px;
+  height: 50%;
+  background-color: #007bff;
+  box-shadow: 19px 0 0 #007bff; /* вторая линия через 10px вправо */
+}
+
+.wall-vet::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: 22px;
+  height: 15px;
+  border: 3px solid #007bff;
+  border-bottom: none;
+  border-radius: 100% 100% 0 0;
+}
+
+.wall-her::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #007bff;
+  top: 10px;
+  box-shadow: 0 19px 0 #007bff; /* вторая линия через 19px вниз */
+}
+
+.wall-her::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  width: 15px;
+  height: 22px;
+  border: 3px solid #007bff;
+  border-left: none;
+  border-radius: 0 100% 100% 0;
+}
+
+.wall-hel::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #007bff;
+  top: 10px;
+  box-shadow: 0 19px 0 #007bff; /* вторая линия через 19px вниз */
+}
+
+.wall-hel::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+  width: 15px;
+  height: 22px;
+  border: 3px solid #007bff;
+  border-right: none;
+  border-radius: 100% 0 0 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial;
+}
+
+.message-box p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.message-box button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
